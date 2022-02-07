@@ -1,0 +1,70 @@
+<html>
+    <head>Array</head>
+    <body>
+        <p id="array"></p>
+    </body>
+    <script>
+        // create the array
+        let cars=['bmw','volve','honda',123]
+        document.getElementById('array').innerHTML=cars
+        // retrive value by index
+        let bmw=cars[0];
+        document.getElementById('array').innerHTML=bmw
+        // operators
+        // length of the array
+        let len=cars.length
+        document.getElementById('array').innerHTML=len
+        // last element of the array
+        let last=cars[cars.length-1]
+        document.getElementById('array').innerHTML=last
+        // loop an array
+        cars.forEach((item,index,array)=>{
+            console.log(item,index)
+        })
+        // methods
+        // to string
+        document.getElementById('array').innerHTML=cars.toString()
+        // pop
+        let last1=cars.pop()
+        document.getElementById("array").innerHTML=last1
+        document.getElementById('array').innerHTML=cars
+        // push
+        cars.push('audi')
+        document.getElementById('array').innerHTML=cars
+        // shift
+        cars.shift();
+        document.getElementById('array').innerHTML=cars
+        // unshift
+        cars.unshift('tata');
+        document.getElementById('array').innerHTML=cars
+        // concatenation
+        let bike=['yamaha','suzuki','bajaj','tvs']
+        let vehicles=cars.concat(bike)
+        document.getElementById("array").innerHTML=vehicles
+        // sort
+        vehicles.sort()
+        document.getElementById("array").innerHTML=vehicles
+        // reverse
+        vehicles.reverse()
+        document.getElementById("array").innerHTML=vehicles
+        // map
+        let num1=[2,4,5,3,1,66]
+        let num2=num1.map(multiply)
+        function multiply(value){
+            return value*2
+        }
+        document.getElementById('array').innerHTML=num2
+        //filter
+        let num3=num1.filter(comp)
+        function comp(value){
+            return value>4
+        } 
+        document.getElementById('array').innerHTML=num3
+        // reduce
+        let num4=num1.reduce(sum)
+        function sum(total,value){
+            return total+value
+        }
+        document.getElementById('array').innerHTML=num4
+    </script>
+</html>
